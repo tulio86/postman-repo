@@ -1,0 +1,2718 @@
+{
+	"info": {
+		"_postman_id": "830ab917-fd38-46de-a4b0-e83a2c1314a6",
+		"name": "OSS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Providers",
+			"item": [
+				{
+					"name": "BITSO",
+					"item": [
+						{
+							"name": "Internal",
+							"item": [
+								{
+									"name": "Get symbols",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "XDESP-SANDBOX",
+												"value": "true",
+												"type": "text"
+											},
+											{
+												"key": "X-Version-Override",
+												"value": "beta",
+												"type": "text"
+											},
+											{
+												"key": "X-Client",
+												"value": "Postman",
+												"type": "text"
+											},
+											{
+												"key": "XDESP-COBRA-MOCK",
+												"value": "provider=true",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "{{oss-services}}/oss-services/collect/crypto/currencies/bitso",
+											"host": [
+												"{{oss-services}}"
+											],
+											"path": [
+												"oss-services",
+												"collect",
+												"crypto",
+												"currencies",
+												"bitso"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Create Quote",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "XDESP-SANDBOX",
+												"value": "true",
+												"type": "text"
+											},
+											{
+												"key": "X-Version-Override",
+												"value": "beta",
+												"type": "text"
+											},
+											{
+												"key": "X-Client",
+												"value": "Postman",
+												"type": "text"
+											},
+											{
+												"key": "XDESP-COBRA-MOCK",
+												"value": "provider=true",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"fromCurrency\": \"usd\",\n    \"toCurrency\": \"btc\",\n    \"amount\": 1.2,\n    \"provider\": \"BITSO\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{oss-services}}/oss-services/collect/crypto/quote",
+											"host": [
+												"{{oss-services}}"
+											],
+											"path": [
+												"oss-services",
+												"collect",
+												"crypto",
+												"quote"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Create Exchange",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "XDESP-SANDBOX",
+												"value": "true",
+												"type": "text"
+											},
+											{
+												"key": "X-Version-Override",
+												"value": "beta",
+												"type": "text"
+											},
+											{
+												"key": "X-Client",
+												"value": "Postman",
+												"type": "text"
+											},
+											{
+												"key": "XDESP-COBRA-MOCK",
+												"value": "provider=true",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"callbackUrl\":\"https://bitso.free.beeceptor.com\",\n    \"orderId\":\"{{$randomUUID}}\",\n    \"provider\":\"BITSO\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{oss-services}}/oss-services/collect/crypto/exchange/x2NMhjFj",
+											"host": [
+												"{{oss-services}}"
+											],
+											"path": [
+												"oss-services",
+												"collect",
+												"crypto",
+												"exchange",
+												"x2NMhjFj"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GetExchange Status",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "XDESP-SANDBOX",
+												"value": "true",
+												"type": "text"
+											},
+											{
+												"key": "X-Version-Override",
+												"value": "beta",
+												"type": "text"
+											},
+											{
+												"key": "X-Client",
+												"value": "Postman",
+												"type": "text"
+											},
+											{
+												"key": "XDESP-COBRA-MOCK",
+												"value": "provider=true",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "{{oss-services}}/oss-services/collect/crypto/exchange/NN1TDXZN?provider=bitso",
+											"host": [
+												"{{oss-services}}"
+											],
+											"path": [
+												"oss-services",
+												"collect",
+												"crypto",
+												"exchange",
+												"NN1TDXZN"
+											],
+											"query": [
+												{
+													"key": "provider",
+													"value": "bitso"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Create Payout",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "XDESP-SANDBOX",
+												"value": "true",
+												"type": "text"
+											},
+											{
+												"key": "X-Version-Override",
+												"value": "beta",
+												"type": "text"
+											},
+											{
+												"key": "X-Client",
+												"value": "Postman",
+												"type": "text"
+											},
+											{
+												"key": "XDESP-COBRA-MOCK",
+												"value": "payout=error|provider=true",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"callback_url\": \"https://bitso.free.beeceptor.com/callback\",\n    \"amount\": \"0.0001\",\n    \"currency\": \"btc\",\n    \"order_id\": \"{{$randomUUID}}\",\n    \"payer\": {\n        \"email\": \"mail.test@test.com\"\n    },\n    \"provider\": \"BITSO\",\n    \"descriptor\": \"Test - Bitso Transfer\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{oss-services}}/oss-services/json/collect/payout",
+											"host": [
+												"{{oss-services}}"
+											],
+											"path": [
+												"oss-services",
+												"json",
+												"collect",
+												"payout"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Payout Status",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "XDESP-SANDBOX",
+												"value": "true",
+												"type": "text"
+											},
+											{
+												"key": "X-Version-Override",
+												"value": "beta",
+												"type": "text"
+											},
+											{
+												"key": "X-Client",
+												"value": "Postman",
+												"type": "text"
+											},
+											{
+												"key": "XDESP-COBRA-MOCK",
+												"value": "payout=rejected",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"callback_url\": \"http://cnd-backend/payouts/callback\",\n    \"amount\": \"0.0001\",\n    \"currency\": \"btc\",\n    \"order_id\": \"asdjbajsdbajsdbh\",\n    \"user_information\": \"1AiP7n1pTZERWyuqcV3KoD2S3uNamgokMu\",\n    \"provider\":\"BITSO\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{oss-services}}/oss-services/json/collect/payout/659ebdf4-0856-4869-942f-374a9ecfbab8?provider=BITSO",
+											"host": [
+												"{{oss-services}}"
+											],
+											"path": [
+												"oss-services",
+												"json",
+												"collect",
+												"payout",
+												"659ebdf4-0856-4869-942f-374a9ecfbab8"
+											],
+											"query": [
+												{
+													"key": "provider",
+													"value": "BITSO"
+												},
+												{
+													"key": "code",
+													"value": "OK",
+													"disabled": true
+												},
+												{
+													"key": "XDESP-COBRA-MOCK",
+													"value": "payout=rejected",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Bitso Payout Listener",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "XDESP-SANDBOX",
+												"value": "true",
+												"type": "text"
+											},
+											{
+												"key": "X-Version-Override",
+												"value": "beta",
+												"type": "text"
+											},
+											{
+												"key": "X-Client",
+												"value": "Postman",
+												"type": "text"
+											},
+											{
+												"key": "XDESP-COBRA-MOCK",
+												"value": "payout=rejected",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"event\": \"withdrawal\",\n    \"payload\": {\n        \"wid\": \"51e1ceb025edc5d10d0fea526ffda8e9\",\n        \"status\": \"complete\",\n        \"created_at\": \"2022-08-30T20:24:25+0000\",\n        \"currency\": \"btc\",\n        \"method\": \"bt\",\n        \"method_name\": \"Bitso Transfer\",\n        \"amount\": \"0.0001\",\n        \"asset\": \"btc\",\n        \"network\": \"bt\",\n        \"protocol\": \"bt\",\n        \"integration\": \"bt\",\n        \"details\": {\n            \"origin_id\": \"3aab9615f842404d9991d17ab65b6f1a\",\n            \"email\": \"nicolas@despegar.com\",\n            \"phone\": null,\n            \"refcode\": null,\n            \"recipient_name\": null,\n            \"notes\": \"\",\n            \"emoji\": \"\"\n        }\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{oss-services}}/oss-services/collect/payout/bitso/listener",
+											"host": [
+												"{{oss-services}}"
+											],
+											"path": [
+												"oss-services",
+												"collect",
+												"payout",
+												"bitso",
+												"listener"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "External",
+							"item": [
+								{
+									"name": "Ticker",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://api.bitso.com/v3/ticker",
+											"protocol": "https",
+											"host": [
+												"api",
+												"bitso",
+												"com"
+											],
+											"path": [
+												"v3",
+												"ticker"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Register webhook",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"var url = require('url').parse('' + pm.environment.values.substitute(pm.request.url));",
+													"var requestPath = url.pathname + (url.search || '');",
+													"var payload = pm.request.body.raw || '';",
+													"",
+													"var nonce = require('moment')(new Date());",
+													"var data = nonce + pm.request.method + requestPath + payload;",
+													"var signature = CryptoJS.HmacSHA256(data, '2fbd1ae38ec4424b9625a579dce5d3eb');",
+													"var auth_header = 'Bitso ' + 'coSSXKouGi' + ':' + nonce + ':' + signature;",
+													"",
+													"pm.environment.set('auth_header', auth_header);"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{auth_header}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"callback_url\":\"https://bitso.free.beeceptor.com\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://stage.bitso.com/api/v3/webhooks/",
+											"protocol": "https",
+											"host": [
+												"stage",
+												"bitso",
+												"com"
+											],
+											"path": [
+												"api",
+												"v3",
+												"webhooks",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Create Quote",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"var url = require('url').parse('' + pm.environment.values.substitute(pm.request.url));",
+													"var requestPath = url.pathname + (url.search || '');",
+													"var payload = pm.request.body.raw || '';",
+													"",
+													"var nonce = require('moment')(new Date());",
+													"var data = nonce + pm.request.method + requestPath + payload;",
+													"var signature = CryptoJS.HmacSHA256(data, '2fbd1ae38ec4424b9625a579dce5d3eb');",
+													"var auth_header = 'Bitso ' + 'coSSXKouGi' + ':' + nonce + ':' + signature;",
+													"",
+													"pm.environment.set('auth_header', auth_header);"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"var jsonData = JSON.parse(responseBody);",
+													"if (jsonData.payload && jsonData.payload.id) {",
+													"    postman.setEnvironmentVariable(\"quote_id\", jsonData.payload.id);",
+													"}"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{auth_header}}",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/text",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"from_currency\": \"usd\",\n    \"to_currency\": \"btc\",\n    \"spend_amount\": 1\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://stage.bitso.com/api/v3/currency_conversions",
+											"protocol": "https",
+											"host": [
+												"stage",
+												"bitso",
+												"com"
+											],
+											"path": [
+												"api",
+												"v3",
+												"currency_conversions"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GetExchange Status",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"var url = require('url').parse('' + pm.environment.values.substitute(pm.request.url));",
+													"var requestPath = url.pathname + (url.search || '');",
+													"var payload = pm.request.body.raw || '';",
+													"",
+													"var nonce = require('moment')(new Date());",
+													"var data = nonce + pm.request.method + requestPath + payload;",
+													"var signature = CryptoJS.HmacSHA256(data, '2fbd1ae38ec4424b9625a579dce5d3eb');",
+													"var auth_header = 'Bitso ' + 'coSSXKouGi' + ':' + nonce + ':' + signature;",
+													"",
+													"pm.environment.set('auth_header', auth_header);"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "{{auth_header}}"
+											},
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "https://stage.bitso.com/api/v3/currency_conversions/lOMYzZTm",
+											"protocol": "https",
+											"host": [
+												"stage",
+												"bitso",
+												"com"
+											],
+											"path": [
+												"api",
+												"v3",
+												"currency_conversions",
+												"lOMYzZTm"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Create Exchange",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"var url = require('url').parse('' + pm.environment.values.substitute(pm.request.url));",
+													"var requestPath = url.pathname + (url.search || '');",
+													"var payload = pm.request.body.raw || '';",
+													"",
+													"var nonce = require('moment')(new Date());",
+													"var data = nonce + pm.request.method + requestPath + payload;",
+													"var signature = CryptoJS.HmacSHA256(data, '2fbd1ae38ec4424b9625a579dce5d3eb');",
+													"var auth_header = 'Bitso ' + 'coSSXKouGi' + ':' + nonce + ':' + signature;",
+													"",
+													"pm.environment.set('auth_header', auth_header);"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "{{auth_header}}"
+											},
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "https://stage.bitso.com/api/v3/currency_conversions/lOMYzZTm",
+											"protocol": "https",
+											"host": [
+												"stage",
+												"bitso",
+												"com"
+											],
+											"path": [
+												"api",
+												"v3",
+												"currency_conversions",
+												"lOMYzZTm"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Cripto Withdrawal (Deprecated)",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"var url = require('url').parse('' + pm.environment.values.substitute(pm.request.url));",
+													"var requestPath = url.pathname + (url.search || '');",
+													"var payload = pm.request.body.raw || '';",
+													"",
+													"var nonce = require('moment')(new Date());",
+													"var data = nonce + pm.request.method + requestPath + payload;",
+													"var signature = CryptoJS.HmacSHA256(data, '2fbd1ae38ec4424b9625a579dce5d3eb');",
+													"var auth_header = 'Bitso ' + 'coSSXKouGi' + ':' + nonce + ':' + signature;",
+													"",
+													"pm.environment.set('auth_header', auth_header);"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{auth_header}}",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/text",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"currency\": \"btc\",\n    \"amount\": \"0.00004999\",\n    \"address\": \"1XiP7n1pTZERWyuqcV3KoD2S3uNamgokMu\"\n}\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://stage.bitso.com/api/v3/crypto_withdrawal/",
+											"protocol": "https",
+											"host": [
+												"stage",
+												"bitso",
+												"com"
+											],
+											"path": [
+												"api",
+												"v3",
+												"crypto_withdrawal",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Cripto withdrawal status (Deprecated)",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"var url = require('url').parse('' + pm.environment.values.substitute(pm.request.url));",
+													"var requestPath = url.pathname + (url.search || '');",
+													"var payload = pm.request.body.raw || '';",
+													"",
+													"var nonce = require('moment')(new Date());",
+													"var data = nonce + pm.request.method + requestPath + payload;",
+													"var signature = CryptoJS.HmacSHA256(data, '2fbd1ae38ec4424b9625a579dce5d3eb');",
+													"var auth_header = 'Bitso ' + 'coSSXKouGi' + ':' + nonce + ':' + signature;",
+													"",
+													"pm.environment.set('auth_header', auth_header);"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{auth_header}}",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/text",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "https://stage.bitso.com/api/v3/withdrawals/6388a6b9d220c4d3bb56ae76a98cd4e0",
+											"protocol": "https",
+											"host": [
+												"stage",
+												"bitso",
+												"com"
+											],
+											"path": [
+												"api",
+												"v3",
+												"withdrawals",
+												"6388a6b9d220c4d3bb56ae76a98cd4e0"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Cripto Withdrawal V2",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"var url = require('url').parse('' + pm.environment.values.substitute(pm.request.url));",
+													"var requestPath = url.pathname + (url.search || '');",
+													"var payload = pm.request.body.raw || '';",
+													"",
+													"var nonce = require('moment')(new Date());",
+													"var data = nonce + pm.request.method + requestPath + payload;",
+													"var signature = CryptoJS.HmacSHA256(data, '2fbd1ae38ec4424b9625a579dce5d3eb');",
+													"var auth_header = 'Bitso ' + 'coSSXKouGi' + ':' + nonce + ':' + signature;",
+													"",
+													"pm.environment.set('auth_header', auth_header);"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{auth_header}}",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"currency\": \"btc\",\n    \"amount\": \"0.0001\",\n    \"origin_id\": \"12367126387126\",\n    \"method\": \"bt\",\n    \"email\": \"kevin.hersch@bitso.com\",\n    \"notes\": \"descripcion\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://stage.bitso.com/api/v3/withdrawals/",
+											"protocol": "https",
+											"host": [
+												"stage",
+												"bitso",
+												"com"
+											],
+											"path": [
+												"api",
+												"v3",
+												"withdrawals",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Cripto Withdrawals status V2",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"var url = require('url').parse('' + pm.environment.values.substitute(pm.request.url));",
+													"var requestPath = url.pathname + (url.search || '');",
+													"var payload = pm.request.body.raw || '';",
+													"",
+													"var nonce = require('moment')(new Date());",
+													"var data = nonce + pm.request.method + requestPath + payload;",
+													"var signature = CryptoJS.HmacSHA256(data, '2fbd1ae38ec4424b9625a579dce5d3eb');",
+													"var auth_header = 'Bitso ' + 'coSSXKouGi' + ':' + nonce + ':' + signature;",
+													"",
+													"pm.environment.set('auth_header', auth_header);"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{auth_header}}",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/text",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "https://stage.bitso.com/api/v3/withdrawals?origin_ids=1234567",
+											"protocol": "https",
+											"host": [
+												"stage",
+												"bitso",
+												"com"
+											],
+											"path": [
+												"api",
+												"v3",
+												"withdrawals"
+											],
+											"query": [
+												{
+													"key": "origin_ids",
+													"value": "1234567"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "GETNET",
+					"item": [
+						{
+							"name": "Pos Fisico",
+							"item": [
+								{
+									"name": "Internal",
+									"item": [
+										{
+											"name": "Webhook",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "XDESP-SANDBOX",
+														"value": "true",
+														"type": "text"
+													},
+													{
+														"key": "X-Version-Override",
+														"value": "beta",
+														"type": "text"
+													},
+													{
+														"key": "X-Client",
+														"value": "Postman",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"TrxAID\":\"A0000000032010\",\n    \"TrxAmount\":\"28678.71\",\n    \"TrxArqc\":\"**** 2F7D\",\n    \"TrxAuth\":\"198569\",\n    \"TrxCard\":\"**** 0809\",\n    \"TrxCardBank\":\"BBVA\",\n    \"TrxCardBrand\":\"Visa\",\n    \"TrxCardInstrument\":\"DEBITO\",\n    \"TrxCcBin\":\"415231\",\n    \"TrxCurrency\":\"MXN\",\n    \"TrxDate\":\"26/07/2022\",\n    \"TrxDescription\":\"\",\n    \"TrxDevice\":\"PP35272138004120\",\n    \"TrxMerchant\":\"8728754 BEST DAY\",\n    \"TrxOriginalNumber\":\"716457020\",\n    \"TrxPaymentMode\":\"Contado\",\n    \"TrxReference\":\"1657129793490CFR-1\",\n    \"TrxResult\":\"APPROVED\",\n    \"TrxTime\":\"19:46:41\",\n    \"TrxUrl\":\"/payment/sale\",\n    \"idTrx\":\"62e08adb20f45a6866eae1bd\",\n    \"integrationMode\":\"ws\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{oss-services}}/oss-services/collect/getnet/pos/listener",
+													"host": [
+														"{{oss-services}}"
+													],
+													"path": [
+														"oss-services",
+														"collect",
+														"getnet",
+														"pos",
+														"listener"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Deposit",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "XDESP-SANDBOX",
+														"value": "true",
+														"type": "text"
+													},
+													{
+														"key": "X-Version-Override",
+														"value": "beta",
+														"type": "text"
+													},
+													{
+														"key": "X-Client",
+														"value": "Postman",
+														"type": "text"
+													},
+													{
+														"key": "XDESP_COBRA_MOCK",
+														"value": "provider=true",
+														"type": "text",
+														"disabled": true
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n     \"orderId\":\"64f71f31-3369-4748-a000-2af13e492a0a\",\n     \"sourceSystem\":\"COBRA\",\n     \"callbackUrl\":\"http://cnd-backend/payment/gateway/oss/cash/orders/64f71f31-3369-4748-a000-2af13e492a0a/1/callback\",\n     \"transactionId\":\"16626645127211\",\n     \"collectConcept\":\"CAR_FARE\",\n     \"countryCode\":\"MX\",\n     \"currencyCode\":\"MXN\",\n     \"amount\":1499.00,\n     \"merchantId\":\"bestday_islas\",\n     \"merchantRefSeqNumber\":1,\n     \"descriptor\":\"Test Pablo\",\n     \"merchantReference\":\"1662664513733CFR-1\",\n     \"channel\":\"site\",\n     \"amountBreakdown\":{\n         \"currency\":\"MXN\",\n         \"value\":1499.00\n    },\n     \"links\":[{\n         \"href\":\"http://cnd-backend/payment/gateway/oss/cash/orders/64f71f31-3369-4748-a000-2af13e492a0a/1/callback\",\n         \"rel\":\"callback_url\",\n         \"method\":\"POST\"\n    }],\n     \"payer\":{\n         \"name\":null,\n         \"first_name\":null,\n         \"last_name\":null,\n         \"address\":null,\n         \"phone\":{\n             \"area\": \"656\",\n             \"number\": \"11111111\"\n        },\n         \"identification\":null,\n         \"email\":\"pdiaz20229251733@yopmail.com\",\n         \"birthdate\":null,\n         \"ip_address\":null\n    },\n     \"depositChannel\":\"GETNET\",\n     \"depositSubChannel\":\"POSMX\",\n     \"depositExpirationDate\":\"2022-11-01T19:00:00.000Z\",\n     \"paymentMethod\":\"CASH\",\n     \"additionals\":{\n         \"bankCode\":\"POSMX\",\n         \"fullName\": \"Pablo\",\n         \"email\": \"pdiaz20229251735@yopmail.com\",\n         \"contactPhone\": \"111111\",\n         \"generateReference\": false,\n         \"customerName\": \"Pablo\",\n         \"customerLastName\": \"Diaz\",\n         \"contactPhoneArea\": \"656\",\n         \"startDate\": \"2022-11-12T16:52:00.000Z\"\n    },\n     \"networks\":[{\n         \"id\":\"POSMX\",\n         \"selected\":true\n    }],\n     \"partner\": {\n         \"code\": \"AG00000009\",\n         \"user\": {\n             \"code\": \"AG00000009\",\n             \"loginType\": \"AGENCY_CODE\"\n        }\n    }\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{oss-services}}/oss-services/json/collect/depositService",
+													"host": [
+														"{{oss-services}}"
+													],
+													"path": [
+														"oss-services",
+														"json",
+														"collect",
+														"depositService"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Refund",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "XDESP-SANDBOX",
+														"value": "true",
+														"type": "text"
+													},
+													{
+														"key": "X-Version-Override",
+														"value": "beta",
+														"type": "text"
+													},
+													{
+														"key": "X-Client",
+														"value": "Postman",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"country_code\":\"MX\",\n    \"amount\":{\n        \"value\":1000.00,\n        \"currency_code\":\"MXN\"\n    },\n    \"merchant_id\":\"bestday_islas\",\n    \"deposit_channel\":\"GETNET\",\n    \"merchant_reference\":\"239249189218EFR-1\",\n    \"transaction_id\":\"239249189218\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{oss-services}}/oss-services/json/collect/cash/fdddfc71-5e35-4766-9e5b-34274274b8e1/refund",
+													"host": [
+														"{{oss-services}}"
+													],
+													"path": [
+														"oss-services",
+														"json",
+														"collect",
+														"cash",
+														"fdddfc71-5e35-4766-9e5b-34274274b8e1",
+														"refund"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "External",
+									"item": [
+										{
+											"name": "Create sale",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer NzVjODcxNTctYWU5My00ZDEwLWJiMjQtNzRlMGQ1MDVlMWVl",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"TrxCurrency\": \"1\",\n    \"TrxUser\": \"test user\",\n    \"TrxReference\": \"TESTCOBRO-DEVO-5\",\n    \"TrxDevice\": \"PP35272138001774\",\n    \"TrxAmount\": 100\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "https://qa.intelipos.io/mmc-ws/i/payment/saleIntegrator",
+													"protocol": "https",
+													"host": [
+														"qa",
+														"intelipos",
+														"io"
+													],
+													"path": [
+														"mmc-ws",
+														"i",
+														"payment",
+														"saleIntegrator"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Get sale by id",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer NzVjODcxNTctYWU5My00ZDEwLWJiMjQtNzRlMGQ1MDVlMWVl",
+														"type": "text"
+													}
+												],
+												"url": {
+													"raw": "https://qa.intelipos.io/mmc-ws/i/payment/queue?id=6217ad2cb36a6904f80cb07e",
+													"protocol": "https",
+													"host": [
+														"qa",
+														"intelipos",
+														"io"
+													],
+													"path": [
+														"mmc-ws",
+														"i",
+														"payment",
+														"queue"
+													],
+													"query": [
+														{
+															"key": "id",
+															"value": "6217ad2cb36a6904f80cb07e"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Get sale by device",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer NzVjODcxNTctYWU5My00ZDEwLWJiMjQtNzRlMGQ1MDVlMWVl",
+														"type": "text"
+													}
+												],
+												"url": {
+													"raw": "https://qa.intelipos.io/mmc-ws/i/payment/queue?serie=PP35272138001774",
+													"protocol": "https",
+													"host": [
+														"qa",
+														"intelipos",
+														"io"
+													],
+													"path": [
+														"mmc-ws",
+														"i",
+														"payment",
+														"queue"
+													],
+													"query": [
+														{
+															"key": "serie",
+															"value": "PP35272138001774"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Delete sale by id",
+											"request": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer NzVjODcxNTctYWU5My00ZDEwLWJiMjQtNzRlMGQ1MDVlMWVl",
+														"type": "text"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"url": {
+													"raw": "https://qa.intelipos.io/mmc-ws/i/payment/queue/6266b829b36a6904f2cea26b",
+													"protocol": "https",
+													"host": [
+														"qa",
+														"intelipos",
+														"io"
+													],
+													"path": [
+														"mmc-ws",
+														"i",
+														"payment",
+														"queue",
+														"6266b829b36a6904f2cea26b"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Refund sale",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer NzVjODcxNTctYWU5My00ZDEwLWJiMjQtNzRlMGQ1MDVlMWVl",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"TrxDevice\" : \"PP35272138001774\",\n    \"TrxAAmount\" : 5000,\n    \"TrxAuth\" : \"662132\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "https://qa.intelipos.io/mmc-ws/i/payment/immediateRefund",
+													"protocol": "https",
+													"host": [
+														"qa",
+														"intelipos",
+														"io"
+													],
+													"path": [
+														"mmc-ws",
+														"i",
+														"payment",
+														"immediateRefund"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Clean terminal cache",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer NzVjODcxNTctYWU5My00ZDEwLWJiMjQtNzRlMGQ1MDVlMWVl",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"device\": \"PP35272138001774\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "https://qa.intelipos.io/mmc-ws/i/transaction/free",
+													"protocol": "https",
+													"host": [
+														"qa",
+														"intelipos",
+														"io"
+													],
+													"path": [
+														"mmc-ws",
+														"i",
+														"transaction",
+														"free"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Online seach (JSON)",
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"data0\": \"9265660050\",\n    \"data\": \"k8ET+K3MEIJ6a9dfHJWooMeY6r9FmnO667OvUE9fN/o7DiUjImQWUqo5wGd8VFFq3J3z45bdck7yRxtRb1Cm/4KDonCys7L0mhd77WmWy8xYivnqvJUAza5g7CwbYX0vaak7XPTQYJFR3Pp+J4q64EjWIlkQ218hkYBFawEIIpmcnYezCGNVNfDwoxAzYrkgkWie/0V70DBey/568E+jkNxaxSZOb8v0zfqcJkGsSO7TRAHmX29X1xlRKOjYGh7C\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "https://qa3.mitec.com.mx/pgs/transacciones",
+													"protocol": "https",
+													"host": [
+														"qa3",
+														"mitec",
+														"com",
+														"mx"
+													],
+													"path": [
+														"pgs",
+														"transacciones"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "REDE",
+					"item": [
+						{
+							"name": "Internal",
+							"item": [
+								{
+									"name": "Authorize",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "XDESP-SANDBOX",
+												"value": "true",
+												"type": "text"
+											},
+											{
+												"key": "X-Version-Override",
+												"value": "beta",
+												"type": "text"
+											},
+											{
+												"key": "X-Client",
+												"value": "Postman",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"cardToken\":\"f9056f56-88dc-48b0-a198-f86e11a02d71\",\n    \"collectConcept\":\"FLIGHT_FARE\",\n    \"countryCode\":\"AR\",\n    \"customerEmail\":\"cobra_ok@despegar.com\",\n    \"ignoreCollectionSchedule\":false,\n    \"installments\":1,\n    \"merchantRefSeqNumber\":1,\n    \"transactionId\":\"814858210750\",\n    \"descriptor\":\"despegar\",\n    \"orderId\":\"65010d26-86ec-4d5a-ad0d-882117773390\",\n    \"attemptNumber\":1,\n    \"merchantReference\":\"814858210750FF16\",\n    \"fromCore\":true,\n    \"flight\":{\n        \"pnr\":\"4@FNJY\",\n        \"validatingCarrierCode\":\"IB\",\n        \"flightType\":\"INTERNATIONAL\"\n    },\n    \"test\":true,\n    \"channel\":\"site\",\n    \"collectChannel\":\"REDE\",\n    \"primaryMerchant\":{\n        \"merchantId\":\"15734816\",\n        \"amount\":463407,\n        \"currencyCode\":\"ARS\"\n    },\n    \"additionals\":{\n        \"cardHolderDocumentType\":\"DNI\",\n        \"cardHolderDocumentNumber\":\"6839897\",\n        \"cardHolderPhoneAreaCode\":\"99\",\n        \"cardHolderPhoneNumber\":\"65465879\"\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{oss-services}}/oss-services/json/collect/authorizeCollectService",
+											"host": [
+												"{{oss-services}}"
+											],
+											"path": [
+												"oss-services",
+												"json",
+												"collect",
+												"authorizeCollectService"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Capture",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "XDESP-SANDBOX",
+												"value": "true",
+												"type": "text"
+											},
+											{
+												"key": "X-Version-Override",
+												"value": "beta",
+												"type": "text"
+											},
+											{
+												"key": "X-Client",
+												"value": "Postman",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"collectChannel\":\"REDE\",\n    \"transactionId\":\"8360210700\",\n    \"merchantReference\":\"814858210750FF13\",\n    \"ossRequestId\":\"10012209061637194596\",\n    \"authorizationCode\":\"911019\",\n    \"merchant\":{\n        \"merchantId\":\"s1_Despegar2\",\n        \"amount\":463407,\n        \"currencyCode\":\"ARS\"\n    },\n    \"cardToken\":\"f9056f56-88dc-48b0-a198-f86e11a02d71\",\n    \"orderId\":\"910878e3-5311-4e8b-8fa2-aaa6ccfe87df\",\n    \"attemptNumber\":1\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{oss-services}}/oss-services/json/collect/confirmCollectService",
+											"host": [
+												"{{oss-services}}"
+											],
+											"path": [
+												"oss-services",
+												"json",
+												"collect",
+												"confirmCollectService"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Collect Status",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "XDESP-SANDBOX",
+												"value": "true",
+												"type": "text"
+											},
+											{
+												"key": "X-Version-Override",
+												"value": "beta",
+												"type": "text"
+											},
+											{
+												"key": "X-Client",
+												"value": "Postman",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"merchantReference\":\"814858210750FF16\",\n    \"requestId\":null,\n    \"requestDate\":1662073753000,\n    \"installments\":1,\n    \"authorizeInstallments\":null,\n    \"deferredMonths\":null,\n    \"cardToken\":\"f9056f56-88dc-48b0-a198-f86e11a02d71\",\n    \"orderId\":\"f9056f56-88dc-48b0-a198-f86e11a02d71\",\n    \"transactionId\":\"36239210900\",\n    \"fromCore\":true,\n    \"countryCode\":\"CO\",\n    \"collectChannel\":\"REDE\",\n    \"merchantTO\":{\n        \"merchantId\":null,\n        \"amount\":239000,\n        \"currencyCode\":\"COP\"\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{oss-services}}/oss-services/json/collect/collectStatusService",
+											"host": [
+												"{{oss-services}}"
+											],
+											"path": [
+												"oss-services",
+												"json",
+												"collect",
+												"collectStatusService"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Collect",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "XDESP-SANDBOX",
+												"value": "true",
+												"type": "text"
+											},
+											{
+												"key": "X-Version-Override",
+												"value": "beta",
+												"type": "text"
+											},
+											{
+												"key": "X-Client",
+												"value": "Postman",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"cardToken\": \"f9056f56-88dc-48b0-a198-f86e11a02d71\",\n    \"collectConcept\": \"FLIGHT_FARE_FEE\",\n    \"countryCode\": \"BR\",\n    \"customerEmail\": \"nicolas.olivera@despegar.com\",\n    \"ignoreCollectionSchedule\": false,\n    \"installments\": 5,\n    \"merchantRefSeqNumber\": 1,\n    \"transactionId\": \"839231194851\",\n    \"descriptor\": \"decolar\",\n    \"orderId\": \"1295d3c7-f738-4256-b64e-790a3a5287cc\",\n    \"attemptNumber\": 1,\n    \"merchantReference\": \"839231194851FFF1\",\n    \"fromCore\": true,\n    \"flight\": {\n        \"pnr\": \"@BV2LW\",\n        \"validatingCarrierCode\": \"AA\",\n        \"flightType\": \"INTERNATIONAL\"\n    },\n    \"test\": true,\n    \"channel\": \"site\",\n    \"collectChannel\": \"REDE\",\n    \"primaryMerchant\": {\n        \"merchantId\": \"despegar\",\n        \"amount\": 16000.00,\n        \"currencyCode\": \"BRL\"\n    },\n    \"additionals\": {\n        \"cardHolderDocumentType\": \"CPF\",\n        \"cardHolderDocumentNumber\": \"52373504707\",\n        \"cardHolderStreet\": \"CLN 102\",\n        \"cardHolderZipCode\": \"70722500\",\n        \"cardHolderHouseNumber\": \"2\",\n        \"cardHolderPhoneAreaCode\": \"11\",\n        \"cardHolderPhoneNumber\": \"12345678\"\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{oss-services}}/oss-services/json/collect/collectService",
+											"host": [
+												"{{oss-services}}"
+											],
+											"path": [
+												"oss-services",
+												"json",
+												"collect",
+												"collectService"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Cancel",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "XDESP-SANDBOX",
+												"value": "true",
+												"type": "text"
+											},
+											{
+												"key": "X-Version-Override",
+												"value": "beta",
+												"type": "text"
+											},
+											{
+												"key": "X-Client",
+												"value": "Postman",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"ossRequestId\":\"10012209081024582845\",\n    \"collectChannel\":\"REDE\",\n    \"merchantId\":\"s1_despe_pos2\",\n    \"currencyCode\":\"BRL\",\n    \"merchantReference\":\"839231194851FFF1\",\n    \"cardBrand\":null,\n    \"cardToken\":\"f9056f56-88dc-48b0-a198-f86e11a02d71\",\n    \"transactionId\":\"839231194851\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{oss-services}}/oss-services/json/collect/cancelCollectService",
+											"host": [
+												"{{oss-services}}"
+											],
+											"path": [
+												"oss-services",
+												"json",
+												"collect",
+												"cancelCollectService"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Refund",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "XDESP-SANDBOX",
+												"value": "true",
+												"type": "text"
+											},
+											{
+												"key": "X-Version-Override",
+												"value": "beta",
+												"type": "text"
+											},
+											{
+												"key": "X-Client",
+												"value": "Postman",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"countryCode\":\"BR\",\n    \"collectData\":{\n        \"merchantId\":\"s1_Despegar2\",\n        \"amount\":463407.00,\n        \"currencyCode\":\"BRL\"\n    },\n    \"ossRequestId\":\"10012209021740130409\",\n    \"collectChannel\":\"REDE\",\n    \"cardBrand\":\"CA\",\n    \"merchantReference\":\"814858210750FF13\",\n    \"transactionId\":\"814858210750\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{oss-services}}/oss-services/json/collect/refundCollectService",
+											"host": [
+												"{{oss-services}}"
+											],
+											"path": [
+												"oss-services",
+												"json",
+												"collect",
+												"refundCollectService"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Refund Status",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "XDESP-SANDBOX",
+												"value": "true",
+												"type": "text"
+											},
+											{
+												"key": "X-Version-Override",
+												"value": "beta",
+												"type": "text"
+											},
+											{
+												"key": "X-Client",
+												"value": "Postman",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"countryCode\":\"AR\",\n    \"collectData\":{\n        \"merchantId\":\"s1_Despegar2\",\n        \"amount\":463407.00,\n        \"currencyCode\":\"ARS\"\n    },\n    \"ossRequestId\":\"588496556\",\n    \"collectChannel\":\"REDE\",\n    \"cardBrand\":\"CA\",\n    \"merchantReference\":\"814858210750FF11\",\n    \"transactionId\":\"207536210600\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{oss-services}}/oss-services/json/collect/refundStatusService?collectChannel=REDE&merchantId=s1_Despegar2&ossRequestId=10012209021740130409&refundRequestId=b6238f97-89ef-4da8-80d1-f37be7baba38&countryCode=BR&merchantReference=814858210750FF13&transactionId=814858210750",
+											"host": [
+												"{{oss-services}}"
+											],
+											"path": [
+												"oss-services",
+												"json",
+												"collect",
+												"refundStatusService"
+											],
+											"query": [
+												{
+													"key": "collectChannel",
+													"value": "REDE"
+												},
+												{
+													"key": "merchantId",
+													"value": "s1_Despegar2"
+												},
+												{
+													"key": "ossRequestId",
+													"value": "10012209021740130409"
+												},
+												{
+													"key": "refundRequestId",
+													"value": "b6238f97-89ef-4da8-80d1-f37be7baba38"
+												},
+												{
+													"key": "countryCode",
+													"value": "BR"
+												},
+												{
+													"key": "merchantReference",
+													"value": "814858210750FF13"
+												},
+												{
+													"key": "transactionId",
+													"value": "814858210750"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "External",
+							"item": [
+								{
+									"name": "Autorización",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"var body = pm.response.json();",
+													"pm.collectionVariables.set(\"tid\", body.tid);",
+													"pm.collectionVariables.set(\"reference\", body.reference);"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"capture\": false,\r\n    \"reference\": \"8148582107F0R0\",\r\n    \"amount\": 46340700,\r\n    \"cardHolderName\": \"Juan Perez\",\r\n    \"cardNumber\": \"5448280000000007\",\r\n    \"expirationMonth\": 12,\r\n    \"expirationYear\": 2030,\r\n    \"securityCode\": \"876\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://api.userede.com.br/desenvolvedores/v1/transactions",
+											"protocol": "https",
+											"host": [
+												"api",
+												"userede",
+												"com",
+												"br"
+											],
+											"path": [
+												"desenvolvedores",
+												"v1",
+												"transactions"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Capture",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"amount\": 222099\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://sandbox-erede.useredecloud.com.br/v1/transactions/10012209061813170508",
+											"protocol": "https",
+											"host": [
+												"sandbox-erede",
+												"useredecloud",
+												"com",
+												"br"
+											],
+											"path": [
+												"v1",
+												"transactions",
+												"10012209061813170508"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Refund",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"var body = pm.response.json();",
+													"pm.collectionVariables.set(\"refundId\", body.refundId);"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"amount\": 202099\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://api.userede.com.br/desenvolvedores/v1/transactions/{{tid}}/refunds",
+											"protocol": "https",
+											"host": [
+												"api",
+												"userede",
+												"com",
+												"br"
+											],
+											"path": [
+												"desenvolvedores",
+												"v1",
+												"transactions",
+												"{{tid}}",
+												"refunds"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Status",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://api.userede.com.br/desenvolvedores/v1/transactions/{{tid}}",
+											"protocol": "https",
+											"host": [
+												"api",
+												"userede",
+												"com",
+												"br"
+											],
+											"path": [
+												"desenvolvedores",
+												"v1",
+												"transactions",
+												"{{tid}}"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Status por referencia",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://api.userede.com.br/desenvolvedores/v1/transactions?reference=814858210750FF13",
+											"protocol": "https",
+											"host": [
+												"api",
+												"userede",
+												"com",
+												"br"
+											],
+											"path": [
+												"desenvolvedores",
+												"v1",
+												"transactions"
+											],
+											"query": [
+												{
+													"key": "reference",
+													"value": "814858210750FF13"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "get status refund",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://api.userede.com.br/desenvolvedores/v1/transactions/10012208171505346771/refunds/a4e17e42-b259-4360-959b-47f63d0bfb5b",
+											"protocol": "https",
+											"host": [
+												"api",
+												"userede",
+												"com",
+												"br"
+											],
+											"path": [
+												"desenvolvedores",
+												"v1",
+												"transactions",
+												"10012208171505346771",
+												"refunds",
+												"a4e17e42-b259-4360-959b-47f63d0bfb5b"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "ITAU",
+					"item": [
+						{
+							"name": "Payin",
+							"item": [
+								{
+									"name": "Internal",
+									"item": []
+								},
+								{
+									"name": "External",
+									"item": [
+										{
+											"name": "Auth",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"var response = JSON.parse(responseBody);",
+															"",
+															"pm.collectionVariables.set(\"access_token\", response.access_token);"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "grant_type",
+															"value": "client_credentials",
+															"type": "text"
+														},
+														{
+															"key": "client_id",
+															"value": "91f2bae9-f781-4f13-9743-5f920f4fe602",
+															"type": "text"
+														},
+														{
+															"key": "client_secret",
+															"value": "b27339cc-ad46-4de0-a511-1d699d461c4f",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "https://sts.itau.com.br/api/oauth/token",
+													"protocol": "https",
+													"host": [
+														"sts",
+														"itau",
+														"com",
+														"br"
+													],
+													"path": [
+														"api",
+														"oauth",
+														"token"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Add Listener",
+											"request": {
+												"auth": {
+													"type": "noauth"
+												},
+												"method": "PUT",
+												"header": [
+													{
+														"key": "x-correlationID",
+														"value": "lalala123123"
+													},
+													{
+														"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+														"key": "Authorization",
+														"value": "Bearer {{access_token}}"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"webhookUrl\": \"https://www.despegar.com/oss-services/collect/itauPix/listener\"\n}"
+												},
+												"url": {
+													"raw": "https://secure.api.itau/pix_recebimentos/v2/webhook/a0d1f750-5544-483f-85c4-8daf5cddb1c5",
+													"protocol": "https",
+													"host": [
+														"secure",
+														"api",
+														"itau"
+													],
+													"path": [
+														"pix_recebimentos",
+														"v2",
+														"webhook",
+														"a0d1f750-5544-483f-85c4-8daf5cddb1c5"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Get Listener",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer {{access_token}}"
+													}
+												],
+												"url": {
+													"raw": "https://secure.api.itau/pix_recebimentos/v2/webhook/a0d1f750-5544-483f-85c4-8daf5cddb1c5",
+													"protocol": "https",
+													"host": [
+														"secure",
+														"api",
+														"itau"
+													],
+													"path": [
+														"pix_recebimentos",
+														"v2",
+														"webhook",
+														"a0d1f750-5544-483f-85c4-8daf5cddb1c5"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Payout",
+							"item": [
+								{
+									"name": "Internal",
+									"item": [
+										{
+											"name": "Generate payout",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "x-uow",
+														"value": "hpioli-NB",
+														"type": "text"
+													},
+													{
+														"key": "XDESP-SANDBOX",
+														"value": "true",
+														"type": "text",
+														"disabled": true
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"callback_url\":\"http://cnd-backend/payouts/callback\",\n    \"amount\":35.0,\n    \"transfer_date\":\"2022-07-16T03:00:01Z\",\n    \"key\":\"10560320493\",\n    \"merchant_id\":\"102PO\",\n    \"order_id\":\"b0928219-b915-4873-86fd-96b21c796f55\",\n    \"transaction_id\":\"108511167086\",\n    \"user_information\":\"DRIBBLEMEDIALIMITEDMULTI*H2H-44725\",\n    \"payment_identification\":\"DRIBBLEMEDIALIMITEDMULTI*H2H-44725\",\n    \"payer\":{\n        \"account_number\":\"00161967\",\n        \"account_type\":\"CC\",\n        \"agency\":\"4300\",\n        \"legal_person_type\":\"J\",\n        \"document_number\":\"13492000000106\",\n        \"sispag_module\":\"Fornecedores\"\n    }\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{oss-services}}/oss-services/json/collect/payout/",
+													"host": [
+														"{{oss-services}}"
+													],
+													"path": [
+														"oss-services",
+														"json",
+														"collect",
+														"payout",
+														""
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "External",
+									"item": [
+										{
+											"name": "Auth",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"var response = JSON.parse(responseBody);",
+															"",
+															"pm.collectionVariables.set(\"access_token\", response.access_token);"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/x-www-form-urlencoded"
+													}
+												],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "grant_type",
+															"value": "client_credentials",
+															"type": "text"
+														},
+														{
+															"key": "client_id",
+															"value": "132b891a-5ed4-4764-9c7d-9803e89e324a",
+															"type": "text"
+														},
+														{
+															"key": "client_secret",
+															"value": "726c57b8-d4cd-417c-bdef-11156b6d29d4",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "https://sts.itau.com.br/api/oauth/token",
+													"protocol": "https",
+													"host": [
+														"sts",
+														"itau",
+														"com",
+														"br"
+													],
+													"path": [
+														"api",
+														"oauth",
+														"token"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Transferencias",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "x-itau-apikey",
+														"value": "c4e1a1f2-3e7e-4a5a-8c6c-056a1a2e2e13"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer {{access_token}}"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"valor_pagamento\": \"1\",\n    \"chave\": \"23810669857\",\n    \"informacoes_entre_usuarios\": \"HOLA MUNDO\",\n    \"identificacao_comprovante\": \"transferencia para o João - referente a manutencao\",\n    \"data_pagamento\": \"2022-02-07\",\n    \"pagador\": {\n        \"tipo_conta\": \"CC\",\n        \"agencia\": \"0057\",\n        \"conta\": \"00092645\",\n        \"tipo_pessoa\": \"J\",\n        \"documento\": \"03563689000231\",\n        \"modulo_sispag\": \"Fornecedores\"\n    }\n}"
+												},
+												"url": {
+													"raw": "https://api.itau.com.br/sispag/v1/transferencias",
+													"protocol": "https",
+													"host": [
+														"api",
+														"itau",
+														"com",
+														"br"
+													],
+													"path": [
+														"sispag",
+														"v1",
+														"transferencias"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Koin Merchants",
+			"item": [
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "XDESP-SANDBOX",
+								"value": "true",
+								"type": "text"
+							},
+							{
+								"key": "X-Version-Override",
+								"value": "beta",
+								"type": "text"
+							},
+							{
+								"key": "X-Client",
+								"value": "Postman",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{oss-services}}/oss-services/koin/merchant/playa",
+							"host": [
+								"{{oss-services}}"
+							],
+							"path": [
+								"oss-services",
+								"koin",
+								"merchant",
+								"playa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "XDESP-SANDBOX",
+								"value": "true",
+								"type": "text"
+							},
+							{
+								"key": "X-Version-Override",
+								"value": "beta",
+								"type": "text"
+							},
+							{
+								"key": "X-Client",
+								"value": "Postman",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{oss-services}}/oss-services/koin/merchant",
+							"host": [
+								"{{oss-services}}"
+							],
+							"path": [
+								"oss-services",
+								"koin",
+								"merchant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "XDESP-SANDBOX",
+								"value": "true",
+								"type": "text"
+							},
+							{
+								"key": "X-Version-Override",
+								"value": "beta",
+								"type": "text"
+							},
+							{
+								"key": "X-Client",
+								"value": "Postman",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"merchant_id\": \"magazine25\",\n    \"store_code\": \"MAGAZINE25\",\n    \"consumer_key\": \"3c7e36f0591c3ace2d5508a18a5ce1521ecbff18e4e14c363ab455ac1796f500013e8ed499b1d58b4a93d3b23d80251565fdbe33c8baec507e1ce0fabf7a174b4d8565\",\n    \"secret_key\": \"2824cf2d84fa09dd3c3f04a4870c803ff2f107f4720001b1644d0c8b9b438625958e5d9cc74d716d027270c85213b6b3bb303fdcccca04529d4601e42c54561436a0d9\",\n    \"encrypted\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{oss-services}}/oss-services/koin/merchant",
+							"host": [
+								"{{oss-services}}"
+							],
+							"path": [
+								"oss-services",
+								"koin",
+								"merchant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "XDESP-SANDBOX",
+								"value": "true",
+								"type": "text"
+							},
+							{
+								"key": "X-Version-Override",
+								"value": "beta",
+								"type": "text"
+							},
+							{
+								"key": "X-Client",
+								"value": "Postman",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{oss-services}}/oss-services/koin/merchant/playa?storeCode=PLAYA&consumerKey=",
+							"host": [
+								"{{oss-services}}"
+							],
+							"path": [
+								"oss-services",
+								"koin",
+								"merchant",
+								"playa"
+							],
+							"query": [
+								{
+									"key": "storeCode",
+									"value": "PLAYA"
+								},
+								{
+									"key": "consumerKey",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "XDESP-SANDBOX",
+								"value": "true",
+								"type": "text"
+							},
+							{
+								"key": "X-Version-Override",
+								"value": "beta",
+								"type": "text"
+							},
+							{
+								"key": "X-Client",
+								"value": "Postman",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{oss-services}}/oss-services/koin/merchant/refreshAll",
+							"host": [
+								"{{oss-services}}"
+							],
+							"path": [
+								"oss-services",
+								"koin",
+								"merchant",
+								"refreshAll"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Maintenance",
+			"item": [
+				{
+					"name": "Properties",
+					"item": [
+						{
+							"name": "Get all",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "XDESP-SANDBOX",
+										"value": "true",
+										"type": "text"
+									},
+									{
+										"key": "X-Version-Override",
+										"value": "beta",
+										"type": "text"
+									},
+									{
+										"key": "X-Client",
+										"value": "Postman",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{oss-services}}/oss-services/db-properties/get-all",
+									"host": [
+										"{{oss-services}}"
+									],
+									"path": [
+										"oss-services",
+										"db-properties",
+										"get-all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "XDESP-SANDBOX",
+										"value": "true",
+										"type": "text"
+									},
+									{
+										"key": "X-Version-Override",
+										"value": "beta",
+										"type": "text"
+									},
+									{
+										"key": "X-Client",
+										"value": "Postman",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"FPAY_DEFAULT_COST\": \"\\\"FPAY_UNKNOW\\\"\",\n    \"EFECTIVOSI_INSTALLMENT_ALLOWED\": [3,6,9,12],\n    \"EFECTIVOSI_PAY_DAY\": 10,\n    \"EFECTIVOSI_REFUND_ENABLED\": true,\n    \"OSS_SCHEDULE\": \"[ { \\\"provider\\\": \\\"VPNVIA\\\", \\\"enabled\\\": false, \\\"merchants\\\": [], \\\"countries\\\": [], \\\"actions\\\": [ { \\\"type\\\": \\\"RETRY_MINUTES\\\", \\\"minutes\\\": 90 } ] } ]\",\n    \"KOIN_EXTERNAL_PLATFORM_SOURCES\": \"{\\\"VTex\\\": \\\"32\\\",\\\"Adobe\\\": \\\"33\\\",\\\"Gateway\\\": \\\"32\\\"}\",\n    \"LVP_ISLA_CHANNELS\": \"[\\\"bestday-islas-liverpool\\\"]\"\n}"
+								},
+								"url": {
+									"raw": "{{oss-services}}/oss-services/db-properties",
+									"host": [
+										"{{oss-services}}"
+									],
+									"path": [
+										"oss-services",
+										"db-properties"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "decrypt",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "XDESP-SANDBOX",
+								"value": "true",
+								"type": "text"
+							},
+							{
+								"key": "X-Version-Override",
+								"value": "beta",
+								"type": "text"
+							},
+							{
+								"key": "X-Client",
+								"value": "Postman",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"list\": [\n        \"18162a8202348f75dd0f08e82e0001503f7d7ef20c96dbe9e4f4819d2e1af23bcd19283fb7af0a4c93dd881866837847d6f7a580d6a5fec528f156fe79da70781306c6\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{oss-services}}/oss-services/json/collect/decrypt",
+							"host": [
+								"{{oss-services}}"
+							],
+							"path": [
+								"oss-services",
+								"json",
+								"collect",
+								"decrypt"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "encrypt",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "XDESP-SANDBOX",
+								"value": "true",
+								"type": "text"
+							},
+							{
+								"key": "X-Version-Override",
+								"value": "beta",
+								"type": "text"
+							},
+							{
+								"key": "X-Client",
+								"value": "Postman",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"list\": [\n        \"8BDFF837CCDE444985FE857A0BBCD3BF\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{oss-services}}/oss-services/json/collect/encrypt",
+							"host": [
+								"{{oss-services}}"
+							],
+							"path": [
+								"oss-services",
+								"json",
+								"collect",
+								"encrypt"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "replicate all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "XDESP-SANDBOX",
+								"value": "true",
+								"type": "text"
+							},
+							{
+								"key": "X-Version-Override",
+								"value": "zeta",
+								"type": "text"
+							},
+							{
+								"key": "X-Client",
+								"value": "hpioli-NB",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"endpoint\": \"/collect/maintenance/oss/snapshot-refresh?service=PROVIDER\",\n    \"all_instances\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{oss-services}}/oss-services/collect/maintenance/oss/replicate",
+							"host": [
+								"{{oss-services}}"
+							],
+							"path": [
+								"oss-services",
+								"collect",
+								"maintenance",
+								"oss",
+								"replicate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "replicate all",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "XDESP-SANDBOX",
+								"value": "true",
+								"type": "text"
+							},
+							{
+								"key": "X-Version-Override",
+								"value": "beta",
+								"type": "text"
+							},
+							{
+								"key": "X-Client",
+								"value": "Postman",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"endpoint\": \"/koin/merchant/refreshAll\",\n    \"all_instances\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{oss-services}}/oss-services/collect/maintenance/oss/replicate",
+							"host": [
+								"{{oss-services}}"
+							],
+							"path": [
+								"oss-services",
+								"collect",
+								"maintenance",
+								"oss",
+								"replicate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

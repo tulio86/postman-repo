@@ -1,0 +1,532 @@
+{
+	"info": {
+		"_postman_id": "90b6d452-35ce-4f22-825d-94c7b1807bdd",
+		"name": "dVault",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "dVault-papi",
+			"item": [
+				{
+					"name": "mask",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "dvault-authentication-username",
+								"value": "test_app_1",
+								"type": "text"
+							},
+							{
+								"key": "dvault-authentication-password",
+								"value": "Despegar123",
+								"type": "text"
+							},
+							{
+								"key": "dvault-authentication-application",
+								"value": "test-app",
+								"type": "text"
+							},
+							{
+								"key": "X-Client",
+								"value": "Postman",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://dvault.proxy.despexds.net/sandbox/dvault-service/service/tokenization/mask/cc/5c6f81ab-a49a-40d0-b6e3-cc40cadca558",
+							"protocol": "https",
+							"host": [
+								"dvault",
+								"proxy",
+								"despexds",
+								"net"
+							],
+							"path": [
+								"sandbox",
+								"dvault-service",
+								"service",
+								"tokenization",
+								"mask",
+								"cc",
+								"5c6f81ab-a49a-40d0-b6e3-cc40cadca558"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SecureTokens",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "dvault-authentication-username",
+								"value": "test_app_1",
+								"type": "text"
+							},
+							{
+								"key": "dvault-authentication-password",
+								"value": "Despegar123",
+								"type": "text"
+							},
+							{
+								"key": "dvault-authentication-application",
+								"value": "test-app",
+								"type": "text"
+							},
+							{
+								"key": "X-Client",
+								"value": "Postman",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"secure_token\": \"16adc97dcff3bf089f055c960101075836a6037aa9d11426fd984b635aa81fa1a8174cf16c2c44364f4a05deb91fd2b36ca9290670da8676085e1c0d2e01d69bc9103a\"\n}\n"
+						},
+						"url": {
+							"raw": "https://dvault.proxy.despexds.net/sandbox/vault/tokens",
+							"protocol": "https",
+							"host": [
+								"dvault",
+								"proxy",
+								"despexds",
+								"net"
+							],
+							"path": [
+								"sandbox",
+								"vault",
+								"tokens"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "01 - Tokenize-key",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Client",
+								"value": "Postman"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "https://dvault.proxy.despexds.net/sandbox/vault/tokenize-keys",
+							"protocol": "https",
+							"host": [
+								"dvault",
+								"proxy",
+								"despexds",
+								"net"
+							],
+							"path": [
+								"sandbox",
+								"vault",
+								"tokenize-keys"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "02 - Cards",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Tokenize-Key",
+								"value": "8d6be5313c57dbdc85935c2a4a8b026f2eb8366f290b7a76df71a297ba8a9fa697bd08656b98c0ed94039d5f4fa605c15773fb77126c8c16f13a3c0a1611c7c75688937ff1511a50102df832efcb716ffc975431c1ce53faba96ef0dc2eb852eaebdb5",
+								"type": "text"
+							},
+							{
+								"key": "X-Client",
+								"value": "Postman",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"brand_code\": \"NV\",\n        \"number\": \"5043632241097007\",\n        \"expiration_month\": \"11\",\n        \"expiration_year\": \"2018\",\n        \"security_code\": \"959\",\n        \"bank\": \"NEVADA\",\n        \"holder_name\": \"DESPEGAR COM AR SA TARJETA D \",\n        \"secondsToLive\": 0\n}"
+						},
+						"url": {
+							"raw": "https://dvault.proxy.despexds.net/sandbox/vault/pbdyy",
+							"protocol": "https",
+							"host": [
+								"dvault",
+								"proxy",
+								"despexds",
+								"net"
+							],
+							"path": [
+								"sandbox",
+								"vault",
+								"pbdyy"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "03 - secureToken",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "dvault-authentication-username",
+								"value": "test_app_1",
+								"type": "text"
+							},
+							{
+								"key": "dvault-authentication-password",
+								"value": "Despegar123",
+								"type": "text"
+							},
+							{
+								"key": "dvault-authentication-application",
+								"value": "test-app",
+								"type": "text"
+							},
+							{
+								"key": "X-Client",
+								"value": "Postman",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"secure_token\": \"7b7236f281977d9b1ea7c7dd5945150a7515712657731e42636cac795ae4acf33fe2e3e6eb83114c006c58414b676ca2817d9d2392740083a21c7b34910ac01024122fe92a2db19cc1b05cc7444bc3b1ba58a7da6d25c6bd21d37f2f5f2d1a7f54a729\"\n}\n"
+						},
+						"url": {
+							"raw": "https://dvault.proxy.despexds.net/sandbox/vault/tokens",
+							"protocol": "https",
+							"host": [
+								"dvault",
+								"proxy",
+								"despexds",
+								"net"
+							],
+							"path": [
+								"sandbox",
+								"vault",
+								"tokens"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Validation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Client",
+								"value": "Postman"
+							},
+							{
+								"key": "X-Tokenize-Key",
+								"value": "610c2d5ad978c0a7be284c04547dd89317e3d72c423bcda9a7a77173a8440fea336f561fb21f6f449ebcdad21792e2e0ebd01023e6b664b2e9ac12fe75c126df51ed713710ed97d6ae4512647c4d8a3a555a9577a834b023149ff4a16891fb452d739b"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"brand_code\": \"NV\",\n  \"number\": \"5043632241097007\",\n  \"expiration_month\": \"11\",\n  \"expiration_year\": \"2018\",\n  \"security_code\": \"959\",\n  \"bank\": \"NEVADA\",\n  \"holder_name\": \"DESPEGAR COM AR SA TARJETA D \",\n  \"secondsToLive\":0\n}"
+						},
+						"url": {
+							"raw": "https://dvault.proxy.despexds.net/sandbox/vault/pbdyy/validation",
+							"protocol": "https",
+							"host": [
+								"dvault",
+								"proxy",
+								"despexds",
+								"net"
+							],
+							"path": [
+								"sandbox",
+								"vault",
+								"pbdyy",
+								"validation"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "dVault-service",
+			"item": [
+				{
+					"name": "Untokenize",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "dvault-authentication-username",
+								"value": "test_app_1",
+								"type": "text"
+							},
+							{
+								"key": "dvault-authentication-password",
+								"value": "Despegar123",
+								"type": "text"
+							},
+							{
+								"key": "dvault-authentication-application",
+								"value": "test-app",
+								"type": "text"
+							},
+							{
+								"key": "X-Client",
+								"value": "Postman",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://beta.backend.despexds.net/dvault-service/service/tokenization/mask/cc/a6e8a55c-e7bb-4849-a766-1560a580d146",
+							"protocol": "http",
+							"host": [
+								"beta",
+								"backend",
+								"despexds",
+								"net"
+							],
+							"path": [
+								"dvault-service",
+								"service",
+								"tokenization",
+								"mask",
+								"cc",
+								"a6e8a55c-e7bb-4849-a766-1560a580d146"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tokenize",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "dvault-authentication-username",
+								"value": "test_app_1",
+								"type": "text"
+							},
+							{
+								"key": "dvault-authentication-password",
+								"value": "Despegar123",
+								"type": "text"
+							},
+							{
+								"key": "dvault-authentication-application",
+								"value": "test-app",
+								"type": "text"
+							},
+							{
+								"key": "X-Client",
+								"value": "Postman",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cardType\": \"VI\",\n    \"cardBank\": \"Itaú\",\n    \"number\": \"4242424242424242\",\n    \"nameOnCard\": \"Juan Perez\",\n    \"cardHolderGender\": \"M\",\n    \"securityCode\": \"876\",\n    \"expirationMonth\": \"12\",\n    \"expirationYear\": \"2030\",\n    \"documentNumber\": \"1.234.567-8\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://beta.backend.despexds.net/dvault-service/service/tokenization/tokenize/cc",
+							"protocol": "http",
+							"host": [
+								"beta",
+								"backend",
+								"despexds",
+								"net"
+							],
+							"path": [
+								"dvault-service",
+								"service",
+								"tokenization",
+								"tokenize",
+								"cc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "untokenize plastic",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "dvault-authentication-username",
+								"value": "test_app_1",
+								"type": "text"
+							},
+							{
+								"key": "dvault-authentication-password",
+								"value": "Despegar123",
+								"type": "text"
+							},
+							{
+								"key": "dvault-authentication-application",
+								"value": "test-app",
+								"type": "text"
+							},
+							{
+								"key": "X-Client",
+								"value": "Postman",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://dvault.proxy.despexds.net/sandbox/dvault-service/service/tokenization/card/plastic/10d0760a-ec4b-4231-8d42-644b664b33a7/masked",
+							"protocol": "http",
+							"host": [
+								"dvault",
+								"proxy",
+								"despexds",
+								"net"
+							],
+							"path": [
+								"sandbox",
+								"dvault-service",
+								"service",
+								"tokenization",
+								"card",
+								"plastic",
+								"10d0760a-ec4b-4231-8d42-644b664b33a7",
+								"masked"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "dVault-VCC",
+			"item": [
+				{
+					"name": "Create VCC",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "dvault-authentication-username",
+								"value": "test_app_1",
+								"type": "text"
+							},
+							{
+								"key": "dvault-authentication-password",
+								"value": "Despegar123",
+								"type": "text"
+							},
+							{
+								"key": "dvault-authentication-application",
+								"value": "test-app",
+								"type": "text"
+							},
+							{
+								"key": "X-Client",
+								"value": "Postman",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"billing_currency\": \"USD\",\n    \"currency\": \"USD\",\n    \"amount\": 32.58,\n    \"active_from\": \"2023-01-17T00:00:00Z\",\n    \"active_to\": \"2023-07-15T00:00:00Z\",\n    \"transaction_id\": \"973202206050\",\n    \"country\": \"AR\",\n    \"hotel_name\": \"Big Bus Tours\",\n    \"pax_name\": \"ONA_TXS_APP\",\n    \"product_id\": \"4421613458\",\n    \"provider\": \"WEX\",\n    \"product_destination_country\": \"US\",\n    \"product_type\": \"TOUR\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dvault.proxy.despexds.net/sandbox/vault/virtual-cards",
+							"protocol": "https",
+							"host": [
+								"dvault",
+								"proxy",
+								"despexds",
+								"net"
+							],
+							"path": [
+								"sandbox",
+								"vault",
+								"virtual-cards"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,235 @@
+{
+	"info": {
+		"_postman_id": "259b2525-2e35-45c0-8e37-89e75eaad3bc",
+		"name": "Shield Bins",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Search bins",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Client",
+						"value": "Postman",
+						"type": "text"
+					},
+					{
+						"key": "XDESP-SANDBOX",
+						"value": "true",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{shield-bins}}/collect/bins?bin=42206102",
+					"host": [
+						"{{shield-bins}}"
+					],
+					"path": [
+						"collect",
+						"bins"
+					],
+					"query": [
+						{
+							"key": "bin",
+							"value": "42206102"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Snapshot status",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Client",
+						"value": "Postman",
+						"type": "text"
+					},
+					{
+						"key": "XDESP-SANDBOX",
+						"value": "true",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{shield-bins}}/collect/bins/update/status",
+					"host": [
+						"{{shield-bins}}"
+					],
+					"path": [
+						"collect",
+						"bins",
+						"update",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload file",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Client",
+						"value": "Postman",
+						"type": "text"
+					},
+					{
+						"key": "XDESP-SANDBOX",
+						"value": "true",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "source",
+							"value": "shield-edited",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/hugopioli/Escritorio/Shield-Edited_20220808.zip"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{shield-bins}}/collect/bins/update/file",
+					"host": [
+						"{{shield-bins}}"
+					],
+					"path": [
+						"collect",
+						"bins",
+						"update",
+						"file"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Validate file",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Client",
+						"value": "Postman",
+						"type": "text"
+					},
+					{
+						"key": "XDESP-SANDBOX",
+						"value": "true",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"source\": \"shield-edited\",\n    \"fileName\": \"update_file_shield-edited\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shield-bins}}/collect/bins/update/file/validate",
+					"host": [
+						"{{shield-bins}}"
+					],
+					"path": [
+						"collect",
+						"bins",
+						"update",
+						"file",
+						"validate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Move File",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Client",
+						"value": "Postman",
+						"type": "text"
+					},
+					{
+						"key": "XDESP-SANDBOX",
+						"value": "true",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"source\": \"shield-edited\",\n    \"fileName\": \"update_file_shield-edited\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{shield-bins}}/collect/bins/update/file/move",
+					"host": [
+						"{{shield-bins}}"
+					],
+					"path": [
+						"collect",
+						"bins",
+						"update",
+						"file",
+						"move"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Force reload",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Client",
+						"value": "Postman",
+						"type": "text"
+					},
+					{
+						"key": "XDESP-SANDBOX",
+						"value": "true",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{shield-bins}}/collect/bins/update/force/shield-edited",
+					"host": [
+						"{{shield-bins}}"
+					],
+					"path": [
+						"collect",
+						"bins",
+						"update",
+						"force",
+						"shield-edited"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
